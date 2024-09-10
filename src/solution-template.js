@@ -55,6 +55,11 @@ function generateBoard(boardMetadata) {
     * TODO fill the matrix with "BoardSquare" objects, that are in a pre-initialized state
     *
     */
+    for (let i = 0; i < boardMetadata.colCount; i++) {
+        for (let j = 0; j < boardMetadata.rowCount; j++) {
+            board[i][j] = { boardSquare: { hasBomb: false } }; // Initialize each cell
+        }
+    }
 
 
     /*
@@ -67,6 +72,9 @@ function generateBoard(boardMetadata) {
     for (let i = 0; i < boardMetadata.colCount; i++) {
         for (let j = 0; j < boardMetadata.rowCount; j++) {
             // TODO place the bomb, you can use the following formula: Math.random() * maxProbability < bombProbability
+            if (Math.random() * maxProbability < bombProbability) {
+                board[i][j].boardSquare.hasBomb = true;
+            }
         }
     }
 

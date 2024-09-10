@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+#buttonContainer, #difficultyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+select, input, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ff80ab;
+    background-color: #ffccbc;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, select:hover, input:hover {
+    background-color: #ffab91;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+#game {
+    position: relative;
+    display: grid;
+    gap: 2px;
+    margin-top: 1rem;
+    background-color: rgba(250, 201, 183, 0.62);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#game div {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #ffcc80;
+    color: #5d4037;
+    border: 2px solid #ffab91;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#game div.show {
+    background-color: #fff3e0;
+    border-color: #ffab91;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+#difficultyContainer div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+#difficultyContainer div label {
+    margin-right: 0.5rem;
+    color: #ad1457;
+}
+
+
